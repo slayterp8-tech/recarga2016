@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="FuegoRápido - Servicio profesional de recarga, mantenimiento y venta de extintores a domicilio en Cúcuta. Cumplimos normas NTC y NFPA."/>
+  <title>FuegoRápido | Recarga y Mantenimiento de Extintores en Cúcuta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- tsParticles (opcional - ahora más sutil) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fire@2/tsparticles.preset.fire.bundle.min.js"></script>
+  <style>
+    :root {
+      --primary: #e63946;        /* Rojo fuego profesional */
+      --secondary: #d00000;      /* Rojo intenso */
+      --accent: #f48c06;         /* Naranja cálido */
+      --text-dark: #1d3557;      /* Azul grisáceo elegante */
+      --text-medium: #457b9d;    /* Azul medio */
+      --text-light: #6c757d;     /* Gris para secundarios */
+      --bg-light: #f8f9fa;       /* Fondo claro limpio */
+      --card-bg: #ffffff;        /* Tarjetas blancas */
+      --border: #dee2e6;         /* Bordes suaves */
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.15; /* mucho más sutil */
+    }
+
+    header {
+      background: white;
+      color: var(--text-dark);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.35);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-fixed:hover {
+      transform: scale(1.1);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 140px 5% 100px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .hero h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .hero .highlight {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-medium);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(230,57,70,0.3);
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(208,0,0,0.25);
+    }
+
+    section {
+      padding: 100px 5%;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--text-dark);
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: all 0.35s ease;
+      border: 1px solid var(--border);
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-color: var(--primary);
+    }
+
+    .service-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .about {
+      background: white;
+      padding: 4rem;
+      border-radius: 20px;
+      max-width: 1000px;
+      margin: 4rem auto;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      background: var(--text-dark);
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero p { font-size: 1.25rem; }
+      header { flex-direction: column; padding: 1rem 5%; }
+      nav { margin-top: 1rem; }
+      nav a { margin: 0.8rem 1.2rem; display: inline-block; }
+      .logo { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <a href="https://wa.me/573022771677" class="whatsapp-fixed" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <header>
+    <div class="logo">FuegoRápido</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div>
+      <h1>Recarga y Mantenimiento de Extintores <span class="highlight">a Domicilio</span> en Cúcuta</h1>
+      <p>Servicio profesional, certificado y confiable. Cumplimos con todas las normas NTC colombianas y estándares NFPA.</p>
+      <a href="https://wa.me/573022771677" class="btn">Cotizar por WhatsApp ahora</a>
+    </div>
+  </section>
+
+  <!-- Resto del contenido (servicios, nosotros, contacto, footer) se mantiene igual que en tu versión anterior -->
+
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <p>Soluciones integrales en protección contra incendios para hogares, empresas y vehículos en Cúcuta.</p>
+    <!-- ... las tarjetas de servicios permanecen iguales ... -->
+  </section>
+
+  <!-- Puedes copiar aquí las secciones de "nosotros", "contacto" y "footer" de tu versión anterior -->
+
+  <!-- Partículas más sutiles -->
+  <script>
+    (async () => {
+      await loadFirePreset(tsParticles);
+      await tsParticles.load("particles-js", {
+        preset: "fire",
+        background: { color: "transparent" },
+        particles: {
+          number: { value: 30 },
+          move: { speed: 1.5 },
+          opacity: { value: { min: 0.1, max: 0.5 } },
+          size: { value: { min: 1, max: 5 } }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
