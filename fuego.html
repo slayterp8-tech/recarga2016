@@ -2,282 +2,130 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="FuegoRápido - Servicio profesional de recarga, mantenimiento y venta de extintores a domicilio en Cúcuta. Cumplimos normas NTC y NFPA."/>
-  <title>FuegoRápido | Recarga y Mantenimiento de Extintores en Cúcuta</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="Recarga y mantenimiento de extintores en Barranquilla, Santa Marta y Cartagena. Servicio 24/7 a domicilio con certificados oficiales - FuegoRápido."/>
+  <title>FuegoRápido | Recarga y Mantenimiento de Extintores - Bogota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <!-- tsParticles (opcional - ahora más sutil) -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fire@2/tsparticles.preset.fire.bundle.min.js"></script>
   <style>
-    :root {
-      --primary: #e63946;        /* Rojo fuego profesional */
-      --secondary: #d00000;      /* Rojo intenso */
-      --accent: #f48c06;         /* Naranja cálido */
-      --text-dark: #1d3557;      /* Azul grisáceo elegante */
-      --text-medium: #457b9d;    /* Azul medio */
-      --text-light: #6c757d;     /* Gris para secundarios */
-      --bg-light: #f8f9fa;       /* Fondo claro limpio */
-      --card-bg: #ffffff;        /* Tarjetas blancas */
-      --border: #dee2e6;         /* Bordes suaves */
-      --shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: var(--text-dark);
-      background: var(--bg-light);
-      line-height: 1.6;
-    }
-
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      opacity: 0.15; /* mucho más sutil */
-    }
-
-    header {
-      background: white;
-      color: var(--text-dark);
-      padding: 1.2rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: var(--shadow);
-      border-bottom: 3px solid var(--primary);
-    }
-
-    .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    nav a {
-      color: var(--text-dark);
-      text-decoration: none;
-      margin: 0 1.2rem;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    .whatsapp-fixed {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25D366;
-      color: white;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.4rem;
-      box-shadow: 0 6px 25px rgba(37,211,102,0.35);
-      z-index: 999;
-      text-decoration: none;
-      transition: transform 0.3s;
-    }
-
-    .whatsapp-fixed:hover {
-      transform: scale(1.1);
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      padding: 140px 5% 100px;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-
-    .hero h1 {
-      font-size: 3.6rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--text-dark);
-    }
-
-    .hero .highlight {
-      color: var(--primary);
-    }
-
-    .hero p {
-      font-size: 1.4rem;
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      color: var(--text-medium);
-    }
-
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(230,57,70,0.3);
-    }
-
-    .btn:hover {
-      background: var(--secondary);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(208,0,0,0.25);
-    }
-
-    section {
-      padding: 100px 5%;
-      text-align: center;
-    }
-
-    h2 {
-      color: var(--text-dark);
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .service-card {
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      transition: all 0.35s ease;
-      border: 1px solid var(--border);
-    }
-
-    .service-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-      border-color: var(--primary);
-    }
-
-    .service-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-card h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .about {
-      background: white;
-      padding: 4rem;
-      border-radius: 20px;
-      max-width: 1000px;
-      margin: 4rem auto;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    footer {
-      background: var(--text-dark);
-      color: white;
-      padding: 4rem 5% 2rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      .hero p { font-size: 1.25rem; }
-      header { flex-direction: column; padding: 1rem 5%; }
-      nav { margin-top: 1rem; }
-      nav a { margin: 0.8rem 1.2rem; display: inline-block; }
-      .logo { font-size: 2.1rem; }
-    }
+    :root{--red:#ff0000;--dark:#0a0a0a;--gray:#111;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--dark);color:#fff;font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
+    h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;}
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.95);backdrop-filter:blur(10px);z-index:1000;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--red);flex-wrap:wrap;}
+    .logo{font-size:clamp(1.8rem,5vw,2.4rem);font-weight:900;color:var(--red);letter-spacing:4px;}
+    nav{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;}
+    nav a{color:#fff;text-decoration:none;font-size:clamp(0.9rem,2.5vw,1rem);font-weight:bold;transition:0.3s;}
+    nav a:hover{color:var(--red);text-shadow:0 0 15px var(--red);}
+    .menu-toggle{display:none;font-size:2rem;color:var(--red);cursor:pointer;}
+    @media(max-width:768px){.menu-toggle{display:block;}nav{display:none;width:100%;background:rgba(0,0,0,0.98);padding:20px 0;order:3;}nav.active{display:flex;flex-direction:column;align-items:center;}nav a{margin:10px 0;font-size:1.4rem;}}
+    .whatsapp-fixed{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem;box-shadow:0 0 25px rgba(37,211,102,0.9);z-index:999;animation:pulse 2s infinite;}
+    .hero{min-height:100vh;background:linear-gradient(135deg,#000000,#110000);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:100px 20px 80px;}
+    .hero h1{font-size:clamp(3.5rem,12vw,7rem);background:linear-gradient(90deg,#ff0000,#ff3333);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 60px rgba(255,0,0,0.8);animation:glow 2s infinite alternate;line-height:1;}
+    .hero p{font-size:clamp(1.3rem,4vw,2.2rem);margin:20px 0;color:#ff3333;}
+    .hero-buttons{margin-top:50px;display:flex;flex-direction:column;gap:20px;align-items:center;}
+    .btn-hero{padding:18px 40px;font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;text-transform:uppercase;border:4px solid var(--red);color:white;border-radius:8px;transition:all 0.4s;min-width:280px;width:90%;max-width:400px;text-align:center;}
+    .btn-hero:hover{background:var(--red);box-shadow:0 0 40px var(--red);transform:scale(1.05);}
+    .btn-hero.whatsapp{background:#25D366;border-color:#25D366;}
+    section{padding:80px 5%;text-align:center;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;}
+    .card{background:#111;padding:40px 20px;border:2px solid #333;transition:0.4s;}
+    .card:hover{border-color:var(--red);box-shadow:0 0 30px rgba(255,0,0,0.5);transform:translateY(-10px);}
+    .card i{font-size:3.5rem;color:var(--red);margin-bottom:20px;}
+    #particles-js{position:absolute;width:100%;height:100%;top:0;left:0;}
+    .scanline{position:absolute;top:0;width:100%;height:3px;background:linear-gradient(transparent,rgba(255,0,0,0.3));animation:scan 8s linear infinite;pointer-events:none;}
+    @keyframes glow{from{text-shadow:0 0 30px #ff0000;}to{text-shadow:0 0 80px #ff0000;}}
+    @keyframes scan{0%{transform:translateY(-100%);}100%{transform:translateY(100vh);}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.8);}70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}}
+    footer{background:#000;padding:40px 20px 60px;text-align:center;font-size:0.9rem;color:#666;border-top:1px solid #333;}
+    footer a{color:#888;text-decoration:none;margin:0 10px;}
+    footer a:hover{color:var(--red);}
   </style>
 </head>
 <body>
-
-  <div id="particles-js"></div>
-
-  <a href="https://wa.me/573022771677" class="whatsapp-fixed" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
+  <a href="https://wa.me/573189411374" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
   <header>
     <div class="logo">FuegoRápido</div>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">Menu</div>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Nosotros</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#por-que">Por qué Elegirnos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
-
   <section class="hero" id="inicio">
+    <div id="particles-js"></div><div class="scanline"></div>
     <div>
-      <h1>Recarga y Mantenimiento de Extintores <span class="highlight">a Domicilio</span> en Cúcuta</h1>
-      <p>Servicio profesional, certificado y confiable. Cumplimos con todas las normas NTC colombianas y estándares NFPA.</p>
-      <a href="https://wa.me/573022771677" class="btn">Cotizar por WhatsApp ahora</a>
+      <h1>FUEGORÁPIDO</h1>
+      <p>Recarga y Mantenimiento de Extintores 24/7 en Bogota</p>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-hero">Solicitar Servicio</a>
+        <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Directo</a>
+      </div>
     </div>
   </section>
-
-  <!-- Resto del contenido (servicios, nosotros, contacto, footer) se mantiene igual que en tu versión anterior -->
-
   <section id="servicios">
     <h2>Nuestros Servicios</h2>
-    <p>Soluciones integrales en protección contra incendios para hogares, empresas y vehículos en Cúcuta.</p>
-    <!-- ... las tarjetas de servicios permanecen iguales ... -->
+    <div class="grid">
+      <div class="card"><i class="fas fa-fire-extinguisher"></i><h3>Recarga de Extintores</h3><p>Todo tipo: Polvo químico seco (PQS), CO₂, agua, espuma y clase K</p></div>
+      <div class="card"><i class="fas fa-tools"></i><h3>Mantenimiento Anual</h3><p>Inspección, prueba hidrostática, cambio de válvulas y sellos</p></div>
+      <div class="card"><i class="fas fa-certificate"></i><h3>Certificados Oficiales</h3><p>Cumplimos con NTC 3668, ICONTEC y requisitos de Bomberos</p></div>
+      <div class="card"><i class="fas fa-truck"></i><h3>Servicio a Domicilio</h3><p>Atención en Bogota sin costo adicional por desplazamiento</p></div>
+    </div>
   </section>
-
-  <!-- Puedes copiar aquí las secciones de "nosotros", "contacto" y "footer" de tu versión anterior -->
-
-  <!-- Partículas más sutiles -->
+  <section id="cobertura">
+    <h2>Zona de Cobertura</h2>
+    <p>Brindamos servicio rápido y confiable en las principales ciudades de la Costa Caribe:</p>
+    <div class="grid">
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Bogotah3><p>Atención en toda el área metropolitana</p></div>
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Cota</h3><p>Servicio completo </p></div>
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Fubza</h3><p>Cobertura total </p></div>
+    </div>
+  </section>
+  <section id="por-que">
+    <h2>Por qué Elegir FuegoRápido</h2>
+    <div class="grid">
+      <div class="card"><i class="fas fa-clock"></i><h3>Disponibilidad 24/7</h3><p>Atendemos emergencias cualquier día y hora</p></div>
+      <div class="card"><i class="fas fa-shield-alt"></i><h3>Cumplimiento Normativo</h3><p>Todos nuestros procesos cumplen con las políticas comerciales y normas técnicas colombianas</p></div>
+      <div class="card"><i class="fas fa-thumbs-up"></i><h3>Experiencia y Calidad</h3><p>Técnicos certificados y materiales originales</p></div>
+      <div class="card"><i class="fas fa-handshake"></i><h3>Garantía Total</h3><p>Garantía de 1 año en recargas y mantenimiento</p></div>
+    </div>
+  </section>
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>¡Estamos listos para atenderte! Escríbenos por WhatsApp o llámanos.</p>
+    <div class="hero-buttons" style="margin-top:40px;">
+      <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp 318 941 1374</a>
+      <a href="tel:+573189411374" class="btn-hero">Llamar Ahora</a>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    (async () => {
-      await loadFirePreset(tsParticles);
-      await tsParticles.load("particles-js", {
-        preset: "fire",
-        background: { color: "transparent" },
-        particles: {
-          number: { value: 30 },
-          move: { speed: 1.5 },
-          opacity: { value: { min: 0.1, max: 0.5 } },
-          size: { value: { min: 1, max: 5 } }
-        }
-      });
-    })();
+    particlesJS("particles-js",{
+      particles:{
+        number:{value:window.innerWidth<768?50:100},
+        color:{value:"#ff0000"},
+        shape:{type:"circle"},
+        opacity:{value:0.5,random:true},
+        size:{value:3,random:true},
+        line_linked:{enable:true,distance:150,color:"#ff0000",opacity:0.3,width:1},
+        move:{enable:true,speed:2}
+      },
+      interactivity:{
+        events:{onhover:{enable:true,mode:"repulse"},onclick:{enable:true,mode:"push"}}
+      },
+      retina_detect:true
+    });
   </script>
+  <footer>
+    <p><a href="https://wa.me/573189411374">WhatsApp: +57 318 941 1374</a> | <a href="tel:+573189411374">Tel: +57 318 941 1374</a></p>
+    <p>Servicio en Bogota Direccion:</p>
+    <p><a href="politica-privacidad.html">Política de privacidad</a> | <a href="terminos.html">Términos y condiciones</a></p>
+    <p>© 2026 FuegoRápido – Recarga y mantenimiento profesional de extintores</p>
+  </footer>
 </body>
 </html>
