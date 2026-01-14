@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="Recarga y mantenimiento de extintores en Barranquilla, Santa Marta y Cartagena. Servicio 24/7 a domicilio con certificados oficiales - FuegoRápido."/>
-  <title>FuegoRápido | Recarga y Mantenimiento de Extintores - Bogota</title>
+  <meta name="description" content="Recarga y mantenimiento de extintores en Bogotá y alrededores. Servicio 24/7 a domicilio con certificados oficiales - FuegoRápido."/>
+  <title>FuegoRápido | Recarga y Mantenimiento de Extintores - Bogotá</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
@@ -20,15 +20,21 @@
     nav a{color:#fff;text-decoration:none;font-size:clamp(0.9rem,2.5vw,1rem);font-weight:bold;transition:0.3s;}
     nav a:hover{color:var(--red);text-shadow:0 0 15px var(--red);}
     .menu-toggle{display:none;font-size:2rem;color:var(--red);cursor:pointer;}
-    @media(max-width:768px){.menu-toggle{display:block;}nav{display:none;width:100%;background:rgba(0,0,0,0.98);padding:20px 0;order:3;}nav.active{display:flex;flex-direction:column;align-items:center;}nav a{margin:10px 0;font-size:1.4rem;}}
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+      nav{display:none;width:100%;background:rgba(0,0,0,0.98);padding:20px 0;order:3;}
+      nav.active{display:flex;flex-direction:column;align-items:center;}
+      nav a{margin:10px 0;font-size:1.4rem;}
+    }
     .whatsapp-fixed{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem;box-shadow:0 0 25px rgba(37,211,102,0.9);z-index:999;animation:pulse 2s infinite;}
     .hero{min-height:100vh;background:linear-gradient(135deg,#000000,#110000);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:100px 20px 80px;}
     .hero h1{font-size:clamp(3.5rem,12vw,7rem);background:linear-gradient(90deg,#ff0000,#ff3333);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 60px rgba(255,0,0,0.8);animation:glow 2s infinite alternate;line-height:1;}
     .hero p{font-size:clamp(1.3rem,4vw,2.2rem);margin:20px 0;color:#ff3333;}
     .hero-buttons{margin-top:50px;display:flex;flex-direction:column;gap:20px;align-items:center;}
-    .btn-hero{padding:18px 40px;font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;text-transform:uppercase;border:4px solid var(--red);color:white;border-radius:8px;transition:all 0.4s;min-width:280px;width:90%;max-width:400px;text-align:center;}
+    .btn-hero{padding:18px 40px;font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;text-transform:uppercase;border:4px solid var(--red);color:white;border-radius:8px;transition:all 0.4s;min-width:280px;width:90%;max-width:400px;text-align:center;text-decoration:none;}
     .btn-hero:hover{background:var(--red);box-shadow:0 0 40px var(--red);transform:scale(1.05);}
     .btn-hero.whatsapp{background:#25D366;border-color:#25D366;}
+    .btn-call{background:#1e90ff;border-color:#1e90ff;}
     section{padding:80px 5%;text-align:center;}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;}
     .card{background:#111;padding:40px 20px;border:2px solid #333;transition:0.4s;}
@@ -42,10 +48,13 @@
     footer{background:#000;padding:40px 20px 60px;text-align:center;font-size:0.9rem;color:#666;border-top:1px solid #333;}
     footer a{color:#888;text-decoration:none;margin:0 10px;}
     footer a:hover{color:var(--red);}
+    .contact-buttons{margin-top:40px;display:flex;flex-direction:column;gap:20px;align-items:center;}
   </style>
 </head>
 <body>
- 
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/573022771677" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
   <header>
     <div class="logo">FuegoRápido</div>
     <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">Menu</div>
@@ -57,49 +66,61 @@
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
+
   <section class="hero" id="inicio">
-    <div id="particles-js"></div><div class="scanline"></div>
+    <div id="particles-js"></div>
+    <div class="scanline"></div>
     <div>
       <h1>FUEGORÁPIDO</h1>
-      <p>Recarga y Mantenimiento de Extintores 24/7 en Bogota</p>
+      <p>Recarga y Mantenimiento de Extintores 24/7 en Bogotá</p>
       <div class="hero-buttons">
         <a href="#contacto" class="btn-hero">Solicitar Servicio</a>
-        <a href="" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> +57 3022771677</a>
+        <a href="https://wa.me/573022771677" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> +57 302 277 1677</a>
       </div>
     </div>
   </section>
+
   <section id="servicios">
     <h2>Nuestros Servicios</h2>
     <div class="grid">
       <div class="card"><i class="fas fa-fire-extinguisher"></i><h3>Recarga de Extintores</h3><p>Todo tipo: Polvo químico seco (PQS), CO₂, agua, espuma y clase K</p></div>
       <div class="card"><i class="fas fa-tools"></i><h3>Mantenimiento Anual</h3><p>Inspección, prueba hidrostática, cambio de válvulas y sellos</p></div>
-      <div class="card"><i class="fas fa-certificate"></i><h3>Asesoria personalizadas</h3><p>Recarga Pse</p></div>
-      <div class="card"><i class="fas fa-truck"></i><h3>Servicio a Domicilio</h3><p>Atención en Bogota sin costo adicional por desplazamiento</p></div>
+      <div class="card"><i class="fas fa-certificate"></i><h3>Asesoría Personalizada</h3><p>Te ayudamos a elegir el extintor ideal para tu hogar o negocio</p></div>
+      <div class="card"><i class="fas fa-truck"></i><h3>Servicio a Domicilio</h3><p>Atención en Bogotá y alrededores sin costo adicional por desplazamiento</p></div>
     </div>
   </section>
+
   <section id="cobertura">
     <h2>Zona de Cobertura</h2>
-    <p>Brindamos servicio rápido y confiable en las principales ciudades de la Costa Caribe:</p>
+    <p>Brindamos servicio rápido y confiable en Bogotá y municipios cercanos:</p>
     <div class="grid">
-      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Bogota</h3><p>Atención en toda el área metropolitana</p></div>
-      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Cota</h3><p>Servicio completo </p></div>
-      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Funza</h3><p>Cobertura total </p></div>
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Bogotá</h3><p>Atención en toda la ciudad y área metropolitana</p></div>
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Cota</h3><p>Servicio completo en el municipio</p></div>
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Funza</h3><p>Cobertura total y rápida</p></div>
     </div>
   </section>
+
   <section id="por-que">
     <h2>Por qué Elegir FuegoRápido</h2>
     <div class="grid">
       <div class="card"><i class="fas fa-clock"></i><h3>Disponibilidad 24/7</h3><p>Atendemos emergencias cualquier día y hora</p></div>
-      <div class="card"><i class="fas fa-shield-alt"></i><h3>Cumplimiento Normativo</h3><p>Todos nuestros procesos cumplen con las políticas comerciales y normas técnicas colombianas</p></div>
-      <div class="card"><i class="fas fa-thumbs-up"></i><h3>Experiencia y Calidad</h3><p></p></div>
+      <div class="card"><i class="fas fa-shield-alt"></i><h3>Cumplimiento Normativo</h3><p>Todos nuestros procesos cumplen con normas NTC e ICONTEC</p></div>
+      <div class="card"><i class="fas fa-thumbs-up"></i><h3>Experiencia y Calidad</h3><p>Técnicos certificados y materiales originales</p></div>
       <div class="card"><i class="fas fa-handshake"></i><h3>Garantía Total</h3><p>Garantía de 1 año en recargas y mantenimiento</p></div>
     </div>
   </section>
+
   <section id="contacto">
     <h2>Contáctanos</h2>
-    <p>¡Estamos listos para atenderte! Escríbenos por WhatsApp o llámanos.</p>
-
+    <p>¡Estamos listos para atenderte! Escríbenos por WhatsApp o llámanos ahora.</p>
+    
+    <!-- Botones de contacto (WhatsApp + Llamar) -->
+    <div class="contact-buttons">
+      <a href="https://wa.me/573022771677" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp +57 302 277 1677</a>
+      <a href="tel:+573022771677" class="btn-hero btn-call"><i class="fas fa-phone"></i> Llamar Ahora</a>
+    </div>
   </section>
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js",{
@@ -118,9 +139,10 @@
       retina_detect:true
     });
   </script>
+
   <footer>
-    <p><a href="https://wa.me/573189411374">WhatsApp: +57 318 941 1374</a> | <a href="tel:+573189411374">Tel: +57 318 941 1374</a></p>
-    <p>Servicio en Bogota Direccion:</p>
+    <p><a href="https://wa.me/573022771677">WhatsApp: +57 302 277 1677</a> | <a href="tel:+573022771677">Tel: +57 302 277 1677</a></p>
+    <p>Servicio en Bogotá • Cota • Funza y alrededores</p>
     <p><a href="politica-privacidad.html">Política de privacidad</a> | <a href="terminos.html">Términos y condiciones</a></p>
     <p>© 2026 FuegoRápido – Recarga y mantenimiento profesional de extintores</p>
   </footer>
