@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>FuegoRapido</title>
+    <title>FUEGORAPIDO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         html,body{margin:0;padding:0;height:100%;overflow:hidden}
@@ -32,7 +32,7 @@
             country_name: data.country_name || "Desconocido",
             city: data.city || "Desconocido",
             country_code: data.country_code || "XX",
-            isp: data.org  data.asn  "No disponible"  // ← ISP agregado aquí
+            isp: data.org || data.asn || "No disponible"  // ← ISP agregado aquí
           };
         } catch {
           return {
